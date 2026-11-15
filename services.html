@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f4ef" />
+  <title>Services — Assista Tech Concept</title>
+  <meta name="description" content="Assista Tech Concept builds conversational systems, process automation, and custom operational tools that remove friction from everyday business work." />
+
+  <meta property="og:title" content="Services — Assista Tech Concept" />
+  <meta property="og:description" content="Conversational systems, process automation, and custom operational tools for Nigerian businesses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://assistatechconcept.com.ng/services.html" />
+  <meta property="og:site_name" content="Assista Tech Concept" />
+  <meta property="og:image" content="https://assistatechconcept.com.ng/og-image.jpg" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Services page only. Shared styles live in styles.css. */
+    .page-intro { padding: var(--space-xl) 0 var(--space-lg); }
+
+    .service-block {
+      padding: var(--space-xl) 0;
+      border-top: 1px solid var(--border);
+    }
+    .service-block.alt { background: var(--surface); }
+
+    .service-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+    .service-layout.reverse { grid-template-columns: 1.4fr 1fr; }
+    .service-layout.reverse .service-meta { order: 2; }
+    .service-layout.reverse .service-body { order: 1; }
+
+    .service-meta { position: sticky; top: 6rem; }
+
+    .service-number {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      opacity: 0.85;
+    }
+
+    .service-body p { color: var(--text-muted); }
+    .service-body ul { margin: 1.25rem 0 0 1.25rem; color: var(--text-muted); }
+    .service-body li { margin-bottom: 0.5rem; }
+
+    .example {
+      margin-top: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+    .service-block.alt .example { background: var(--bg); }
+    .example strong { display: block; margin-bottom: 0.35rem; font-weight: 600; }
+
+    .cta-band { margin-top: var(--space-lg); }
+
+    @media (max-width: 800px) {
+      .service-layout,
+      .service-layout.reverse {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+      .service-layout.reverse .service-meta { order: -1; }
+      .service-layout.reverse .service-body { order: 0; }
+      .service-meta { position: static; }
+      .page-intro { padding: var(--space-lg) 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">Assista <span>Tech Concept</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="nav-toggle">Menu</button>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html" aria-current="page">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="container">
+        <p class="section-label">Services</p>
+        <h1>Systems that sit inside real work, not on top of it.</h1>
+        <p class="lead">We build three kinds of tools. Each one is designed to remove a specific kind of friction that slows teams down or leaves money and information on the table.</p>
+      </div>
+    </section>
+
+    <section class="service-block">
+      <div class="container service-layout">
+        <div class="service-meta">
+          <div class="service-number" aria-hidden="true">01</div>
+          <h2>Conversational systems</h2>
+        </div>
+        <div class="service-body">
+          <p>Web and messaging interfaces that answer common questions, collect the right details, and hand a clean summary to the person who needs to act.</p>
+          <p>These are not open-ended chatbots. They are scoped to a clear job: qualify a buyer, log a farm activity, guide a routine process, or answer product and location questions accurately.</p>
+          <ul>
+            <li>Lead qualification before the sales team is involved</li>
+            <li>Operational logging inside WhatsApp or Telegram</li>
+            <li>Guided flows that reduce incomplete enquiries</li>
+          </ul>
+          <div class="example">
+            <strong>Example</strong>
+            A cable manufacturer’s website chatbot that answers product questions, then collects need, quantity and location before offering a WhatsApp hand-off with the full summary already prepared.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-block alt">
+      <div class="container service-layout reverse">
+        <div class="service-meta">
+          <div class="service-number" aria-hidden="true">02</div>
+          <h2>Process &amp; payment automation</h2>
+        </div>
+        <div class="service-body">
+          <p>Tools that remove repetitive checking and manual status updates from payments, contributions and routine records.</p>
+          <p>We connect the places information already arrives (bank alerts, email, forms) to the place the team needs to see it (a dashboard, a sheet, a status field).</p>
+          <ul>
+            <li>Automatic matching of payments to members or invoices</li>
+            <li>Status updates driven by reference tags and email content</li>
+            <li>Clear records without daily manual reconciliation</li>
+          </ul>
+          <div class="example">
+            <strong>Example</strong>
+            An Ajo/Esusu contribution system where members generate a reference tag, pay into the group account, and the organiser’s bank alert is read automatically so the member’s dashboard flips from Pending to Paid.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-block">
+      <div class="container service-layout">
+        <div class="service-meta">
+          <div class="service-number" aria-hidden="true">03</div>
+          <h2>Custom operational tools</h2>
+        </div>
+        <div class="service-body">
+          <p>Purpose-built software for specific workflows that do not fit off-the-shelf products well.</p>
+          <p>These are usually internal or semi-internal systems: inventory and flock tracking, cost and margin views, multi-role access for farm units or branches, or simple admin portals that keep records consistent.</p>
+          <ul>
+            <li>Farm and inventory management</li>
+            <li>Role-based access for teams</li>
+            <li>Records that support daily decisions instead of living only in notebooks or chat</li>
+          </ul>
+          <div class="example">
+            <strong>Example</strong>
+            A multi-role poultry farm system covering flocks, feed, drugs, stock, sales and basic cost/margin views, used by both field staff and the person who needs the numbers.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Not sure which type fits?</h2>
+        <p>Describe the friction you are dealing with. We will tell you whether a conversational system, automation, or a custom tool is the better starting point — or if none of them are needed yet.</p>
+        <a href="contact.html" class="btn">Tell us about the problem</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Assista Tech Concept</div>
+      <div>
+        <a href="mailto:info@assistatechconcept.com.ng">info@assistatechconcept.com.ng</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
