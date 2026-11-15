@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f4ef" />
   <title>Assista Tech Concept — Practical technology for business operations</title>
   <meta name="description" content="Assista Tech Concept builds practical systems that remove friction from business operations — conversational tools, process automation, and custom operational software." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Assista Tech Concept — Practical technology for business operations" />
   <meta property="og:description" content="We design and build systems that help companies handle enquiries, automate routine work, and keep operations moving." />
   <meta property="og:type" content="website" />
@@ -14,145 +14,25 @@
   <meta property="og:site_name" content="Assista Tech Concept" />
   <meta property="og:image" content="https://assistatechconcept.com.ng/og-image.jpg" />
 
-  <!-- Favicon (upload these files) -->
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
-    :root {
-      --bg: #f7f4ef;
-      --surface: #ffffff;
-      --text: #1c1917;
-      --text-muted: #57534e;
-      --border: #e7e5e4;
-      --accent: #9a3412;
-      --accent-hover: #7c2d12;
-      --space-xs: 0.5rem;
-      --space-sm: 1rem;
-      --space-md: 1.75rem;
-      --space-lg: 3rem;
-      --space-xl: 5rem;
-      --space-2xl: 8rem;
-      --max-width: 1120px;
-      --measure: 38rem; /* \~65 characters */
-    }
+    /* Home page only. Shared styles live in styles.css. */
+    main > section { padding: var(--space-xl) 0; }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: "Source Sans 3", system-ui, sans-serif;
-      font-size: 1.0625rem;
-      line-height: 1.65;
-      color: var(--text);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { max-width: 100%; display: block; }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    h1, h2, h3 {
-      font-family: "Source Serif 4", Georgia, serif;
-      font-weight: 600;
-      line-height: 1.25;
-      color: var(--text);
-    }
-
-    h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); letter-spacing: -0.02em; }
+    /* The home page runs slightly larger than inner pages */
+    h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); }
     h2 { font-size: clamp(1.75rem, 3.5vw, 2.25rem); margin-bottom: var(--space-md); }
-    h3 { font-size: 1.35rem; margin-bottom: var(--space-sm); }
-
-    p { max-width: var(--measure); margin-bottom: 1.25em; }
-    p:last-child { margin-bottom: 0; }
-
-    .lead {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      max-width: 36rem;
-    }
-
-    .container {
-      width: min(100% - 2.5rem, var(--max-width));
-      margin-inline: auto;
-    }
-
-    /* Header */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      position: relative;
-    }
-
-    .logo {
-      font-family: "Source Serif 4", Georgia, serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .logo span { color: var(--accent); }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: 1.5px solid var(--border);
-      border-radius: 4px;
-      padding: 0.45rem 0.75rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-      cursor: pointer;
-      margin-left: auto;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.75rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .nav-links a:hover,
-    .nav-links a[aria-current="page"] {
-      color: var(--text);
-    }
-
-    .nav-links a[aria-current="page"] {
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
+    .lead { font-size: 1.2rem; }
 
     /* Hero */
-    .hero {
-      padding: var(--space-2xl) 0 var(--space-xl);
-    }
+    .hero { padding: var(--space-2xl) 0 var(--space-xl); }
 
     .hero-grid {
       display: grid;
@@ -160,8 +40,6 @@
       gap: var(--space-xl);
       align-items: end;
     }
-
-    .hero h1 { margin-bottom: var(--space-md); }
 
     .hero-actions {
       margin-top: 2rem;
@@ -175,50 +53,6 @@
       padding-left: var(--space-md);
       color: var(--text-muted);
       font-size: 1.05rem;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 0.85rem 1.6rem;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background 0.15s ease;
-    }
-
-    .btn:hover {
-      background: var(--accent-hover);
-      text-decoration: none;
-      color: white;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1.5px solid var(--border);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--text);
-      background: transparent;
-      color: var(--text);
-    }
-
-    /* Sections */
-    section { padding: var(--space-xl) 0; }
-
-    .section-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: var(--space-sm);
     }
 
     /* How we work */
@@ -249,12 +83,10 @@
       line-height: 1;
     }
 
-    .step h3 { margin-bottom: 0.35rem; }
+    .step h3 { font-size: 1.35rem; margin-bottom: 0.35rem; }
     .step p { color: var(--text-muted); margin: 0; }
 
-    /* Work */
-    .work-section { background: var(--bg); }
-
+    /* Selected work */
     .work-teaser {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -270,16 +102,16 @@
       flex-direction: column;
     }
 
-    .work-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
+    .work-item h3 { font-size: 1.2rem; }
 
     .work-item p {
       color: var(--text-muted);
       font-size: 0.98rem;
       margin-bottom: 0.75rem;
     }
+
+    /* Description takes the spare height so the outcome lines align across cards */
+    .work-item p:not(.outcome) { flex-grow: 1; }
 
     .work-item .outcome {
       font-size: 0.9rem;
@@ -288,105 +120,17 @@
       margin-bottom: 1rem;
       padding-top: 0.75rem;
       border-top: 1px solid var(--border);
-      flex-grow: 0;
     }
 
-    .work-item a {
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-top: auto;
-    }
+    .work-item a { font-weight: 600; font-size: 0.95rem; }
 
-    .see-all {
-      margin-top: 2rem;
-    }
+    .see-all { margin-top: 2rem; }
 
-    /* Closing */
-    .closing {
-      background: var(--text);
-      color: #fafaf9;
-      padding: var(--space-xl) 0;
-    }
-
-    .closing h2 { color: #fafaf9; }
-    .closing p { color: #a8a29e; max-width: 32rem; }
-
-    .closing .btn {
-      margin-top: var(--space-md);
-      background: var(--accent);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: var(--space-lg) 0;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-inner a { color: var(--text-muted); }
-    .footer-inner a:hover { color: var(--text); }
-
-    /* Focus */
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    /* Mobile */
     @media (max-width: 800px) {
       .hero-grid,
-      .work-teaser {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--surface);
-        border-bottom: 1px solid var(--border);
-        flex-direction: column;
-        gap: 0;
-        padding: 0.5rem 0;
-        z-index: 40;
-      }
-
-      .nav-links.is-open {
-        display: flex;
-      }
-
-      .nav-links li {
-        border-top: 1px solid var(--border);
-      }
-
-      .nav-links a {
-        display: block;
-        padding: 0.9rem 1.25rem;
-      }
+      .work-teaser { grid-template-columns: 1fr; }
 
       .hero { padding: var(--space-xl) 0 var(--space-lg); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; }
     }
   </style>
 </head>
@@ -395,10 +139,8 @@
   <header>
     <div class="container nav">
       <a href="index.html" class="logo">Assista <span>Tech Concept</span></a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="nav-toggle">
-        Menu
-      </button>
-      <nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="nav-toggle">Menu</button>
+      <nav aria-label="Main">
         <ul class="nav-links" id="nav-menu">
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="services.html">Services</a></li>
@@ -433,21 +175,21 @@
         <h2>How we work</h2>
         <div class="steps">
           <div class="step">
-            <div class="step-number">01</div>
+            <div class="step-number" aria-hidden="true">01</div>
             <div>
               <h3>Understand the friction</h3>
               <p>We start with the actual problem — incomplete enquiries, manual payment tracking, missing operational data — not with a preferred technology.</p>
             </div>
           </div>
           <div class="step">
-            <div class="step-number">02</div>
+            <div class="step-number" aria-hidden="true">02</div>
             <div>
               <h3>Design the system</h3>
               <p>We map the minimum set of steps that removes the friction and fits the way the team already works.</p>
             </div>
           </div>
           <div class="step">
-            <div class="step-number">03</div>
+            <div class="step-number" aria-hidden="true">03</div>
             <div>
               <h3>Deliver and hand over</h3>
               <p>We build, test with real cases, and leave the team with something they can use immediately.</p>
@@ -457,7 +199,7 @@
       </div>
     </section>
 
-    <section class="work-section">
+    <section>
       <div class="container">
         <p class="section-label">Selected work</p>
         <h2>Recent systems</h2>
@@ -475,13 +217,11 @@
             <a href="work-farma.html">View case study →</a>
           </article>
         </div>
-        <p class="see-all">
-          <a href="work.html">See all work →</a>
-        </p>
+        <p class="see-all"><a href="work.html">See all work →</a></p>
       </div>
     </section>
 
-    <section class="closing">
+    <section class="cta-band">
       <div class="container">
         <h2>Have a process that keeps slowing the team down?</h2>
         <p>Tell us what is breaking or incomplete. We will tell you honestly whether a system is the right next step.</p>
@@ -499,32 +239,6 @@
     </div>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('nav-toggle');
-    const menu = document.getElementById('nav-menu');
-
-    function closeMenu() {
-      menu.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = 'Menu';
-    }
-
-    toggle.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', isOpen);
-      toggle.textContent = isOpen ? 'Close' : 'Menu';
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-
-    // Close when a link is tapped
-    menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-  </script>
-
+  <script src="main.js"></script>
 </body>
 </html>
