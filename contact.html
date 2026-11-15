@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f4ef" />
+  <title>Contact — Assista Tech Concept</title>
+  <meta name="description" content="Tell Assista Tech Concept about the operational friction you are dealing with. We will reply and tell you honestly whether a system is the right next step." />
+
+  <meta property="og:title" content="Contact — Assista Tech Concept" />
+  <meta property="og:description" content="Describe the problem. We will tell you whether a system is the right next step." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://assistatechconcept.com.ng/contact.html" />
+  <meta property="og:site_name" content="Assista Tech Concept" />
+  <meta property="og:image" content="https://assistatechconcept.com.ng/og-image.jpg" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .page-intro {
+      padding: var(--space-xl) 0 var(--space-lg);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: var(--space-xl);
+      align-items: start;
+      padding-bottom: var(--space-xl);
+    }
+
+    .contact-aside p {
+      color: var(--text-muted);
+    }
+
+    .contact-aside a {
+      font-weight: 600;
+    }
+
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: var(--space-lg);
+    }
+
+    .form-card h2 {
+      margin-bottom: 0.35rem;
+    }
+
+    .form-card .form-intro {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: var(--space-md);
+      max-width: none;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .form-group label .hint {
+      display: inline;
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      font: inherit;
+      color: var(--text);
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .form-group input:focus-visible,
+    .form-group textarea:focus-visible,
+    .form-group select:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-color: var(--accent);
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    /* Honeypot — hidden from real users */
+    .hp {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+    }
+
+    .form-actions {
+      margin-top: 1.5rem;
+    }
+
+    .form-note {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: none;
+    }
+
+    /* Thank-you state */
+    .form-success {
+      display: none;
+      padding: 1.5rem;
+      background: var(--bg);
+      border-left: 3px solid var(--accent);
+    }
+
+    .form-success.is-visible {
+      display: block;
+    }
+
+    .form-success h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .form-success p {
+      color: var(--text-muted);
+      max-width: none;
+    }
+
+    .form-card.is-sent .form-fields {
+      display: none;
+    }
+
+    @media (max-width: 800px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+      .page-intro {
+        padding: var(--space-lg) 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">Assista <span>Tech Concept</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="nav-toggle">Menu</button>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="container">
+        <p class="section-label">Contact</p>
+        <h1>Tell us about the problem.</h1>
+        <p class="lead">Describe the friction you are dealing with. We will reply and tell you honestly whether a system is the right next step.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container contact-layout">
+        <div class="contact-aside">
+          <p>Most projects start with a short conversation about what is currently slow, incomplete, or manual. You do not need a detailed brief — a clear description of the problem is enough.</p>
+          <p>Prefer email? Write directly to <a href="mailto:info@assistatechconcept.com.ng">info@assistatechconcept.com.ng</a>.</p>
+        </div>
+
+        <div class="form-card" id="form-card">
+          <!-- Thank-you state (shown after successful submit) -->
+          <div class="form-success" id="form-success" hidden>
+            <h2>Message received</h2>
+            <p>Thank you. We will reply within one to two working days.</p>
+          </div>
+
+          <div class="form-fields" id="form-fields">
+            <h2>Send a message</h2>
+            <p class="form-intro">We usually reply within one to two working days.</p>
+
+            <form id="contact-form" action="https://formspree.io/f/mjywywqw" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required autocomplete="name" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email" />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone <span class="hint">(optional)</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" />
+              </div>
+
+              <div class="form-group">
+                <label for="type">What kind of friction is it?</label>
+                <select id="type" name="type">
+                  <option value="">Select one</option>
+                  <option value="enquiries">Incomplete or slow enquiries</option>
+                  <option value="payments">Payment or contribution tracking</option>
+                  <option value="operations">Daily operational logging / records</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Describe the problem</label>
+                <textarea id="message" name="message" required placeholder="What is currently slow, manual, or incomplete?"></textarea>
+              </div>
+
+              <!-- Honeypot -->
+              <div class="hp" aria-hidden="true">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="_gotcha" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <input type="hidden" name="_subject" value="New enquiry from Assista Tech Concept site" />
+
+              <div class="form-actions">
+                <button type="submit" class="btn">Send message</button>
+              </div>
+
+              <p class="form-note">By sending this form you agree to be contacted about your enquiry. We do not share your details.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Assista Tech Concept</div>
+      <div>
+        <a href="mailto:info@assistatechconcept.com.ng">info@assistatechconcept.com.ng</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Show thank-you state after Formspree redirect (?submitted=1)
+    // or after successful fetch submit.
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const card = document.getElementById('form-card');
+      const success = document.getElementById('form-success');
+      const fields = document.getElementById('form-fields');
+
+      if (params.get('submitted') === '1') {
+        card.classList.add('is-sent');
+        success.hidden = false;
+        success.classList.add('is-visible');
+        fields.style.display = 'none';
+        return;
+      }
+
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+
+      form.addEventListener('submit', async function (e) {
+        // If the Formspree ID is still the placeholder, fall back to normal submit
+        if (form.action.includes('YOUR_FORM_ID')) return;
+
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok) {
+            card.classList.add('is-sent');
+            success.hidden = false;
+            success.classList.add('is-visible');
+            fields.style.display = 'none';
+          } else {
+            btn.disabled = false;
+            btn.textContent = 'Send message';
+            alert('Something went wrong. Please email info@assistatechconcept.com.ng directly.');
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = 'Send message';
+          alert('Something went wrong. Please email info@assistatechconcept.com.ng directly.');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
