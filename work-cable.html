@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f4ef" />
+  <title>Lead-qualification chatbot case study — Assista Tech Concept</title>
+  <meta name="description" content="How Assista Tech Concept built a website chatbot that answers product questions, qualifies buyers, and hands a clean summary to the sales team." />
+
+  <meta property="og:title" content="Lead-qualification chatbot for a cable manufacturer — Assista Tech Concept" />
+  <meta property="og:description" content="A website chatbot that answers first, then gently collects need, quantity and location before handing a clean summary to sales." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://assistatechconcept.com.ng/work-cable.html" />
+  <meta property="og:site_name" content="Assista Tech Concept" />
+  <meta property="og:image" content="https://assistatechconcept.com.ng/og-image.jpg" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .page-intro {
+      padding: var(--space-xl) 0 var(--space-lg);
+    }
+
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    .case-meta dt {
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+    .case-meta dd {
+      margin: 0;
+    }
+
+    .section {
+      padding: var(--space-xl) 0;
+      border-top: 1px solid var(--border);
+    }
+    .section.alt {
+      background: var(--surface);
+    }
+    .section h2 {
+      margin-bottom: var(--space-md);
+    }
+    .section p {
+      color: var(--text-muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .prose-list {
+      margin: 1.25rem 0 0 1.25rem;
+      color: var(--text-muted);
+    }
+    .prose-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .note {
+      margin-top: 1.25rem;
+    }
+
+    .chat-figure {
+      margin: 0;
+    }
+    .chat-figure figcaption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .chat-mock {
+      background: var(--text);
+      border-radius: 12px;
+      padding: 1.25rem;
+      max-width: 420px;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding-bottom: 0.9rem;
+      margin-bottom: 0.9rem;
+      border-bottom: 1px solid #44403c;
+      color: #fafaf9;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .chat-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .bubble {
+      max-width: 85%;
+      padding: 0.65rem 0.85rem;
+      border-radius: 12px;
+      margin-bottom: 0.65rem;
+      color: #fafaf9;
+    }
+    .bubble.bot {
+      background: #292524;
+      border-bottom-left-radius: 4px;
+    }
+    .bubble.user {
+      background: var(--accent);
+      margin-left: auto;
+      border-bottom-right-radius: 4px;
+    }
+    .bubble.summary {
+      background: #292524;
+      border: 1px solid #44403c;
+      max-width: 100%;
+      font-size: 0.85rem;
+    }
+    .bubble.summary strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: #fafaf9;
+    }
+
+    .chat-action {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.7rem;
+  background: #3f6212;
+  color: #f7fee7;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+}
+
+    /* Speaker labels for screen readers only */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .cta-band {
+      margin-top: var(--space-lg);
+    }
+
+    @media (max-width: 800px) {
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+      .page-intro {
+        padding: var(--space-lg) 0;
+      }
+      .chat-mock {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">Assista <span>Tech Concept</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="nav-toggle">Menu</button>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="container">
+        <p class="section-label">Case study</p>
+        <h1>Lead-qualification chatbot for a cable manufacturer</h1>
+        <p class="lead">A website assistant that answers product and location questions first, then gently collects the details the sales team actually needs before handing the conversation over.</p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Client type</dt>
+            <dd>Electrical cable manufacturer</dd>
+          </div>
+          <div>
+            <dt>Channel</dt>
+            <dd>Website chatbot with WhatsApp hand-off</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Product answers + lead qualification</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>The friction</h2>
+        <p>The company received a steady mix of product questions, dealer location requests, and quote enquiries. Many of these arrived incomplete — missing quantity, location, or a clear sense of what the buyer actually needed.</p>
+        <p>Sales time was spent chasing basic details that could have been collected earlier. Serious buyers and casual browsers looked the same until someone followed up.</p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container two-col">
+        <div>
+          <h2>The approach</h2>
+          <p>We built a scoped website chatbot that does three things in order:</p>
+          <ol class="prose-list">
+            <li>Answers product and dealer questions accurately from verified information.</li>
+            <li>When buying intent is clear, gently collects need, quantity and location (and, optionally, a name).</li>
+            <li>Only then offers a WhatsApp hand-off that already carries a clean summary for the sales team.</li>
+          </ol>
+          <p class="note">The WhatsApp button stays quiet until the lead is qualified. The bot does not invent specifications or push for a sale.</p>
+        </div>
+
+        <figure class="chat-figure">
+          <figcaption>Illustrative conversation based on the live demo.</figcaption>
+          <div class="chat-mock">
+            <div class="chat-header">
+              <div class="chat-avatar" aria-hidden="true">A</div>
+              Product Assistant
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>Hello! I can help with product questions, finding where to buy, and getting a quote. What do you need?
+            </div>
+            <div class="bubble user"><span class="sr-only">Visitor: </span>What cables do I need for an air conditioning system?</div>
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>We manufacture various cables suitable for electrical installations, including air conditioning systems. The specific size depends on the unit’s power rating, distance from the power source, and installation method. Final selection should be confirmed by a qualified electrician.
+            </div>
+            <div class="bubble user"><span class="sr-only">Visitor: </span>7mm. What types do you have? My units are 12hp</div>
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>7mm² isn’t one of our standard sizes. The nearest are 6mm² and 10mm². For a 12hp unit a qualified electrician should calculate the exact load. Which would you like, or shall we keep 7mm² and let the team advise?
+            </div>
+            <div class="bubble user"><span class="sr-only">Visitor: </span>10mm</div>
+            <div class="bubble bot"><span class="sr-only">Assistant: </span>Noted: 10mm². What length or quantity do you need?</div>
+            <div class="bubble user"><span class="sr-only">Visitor: </span>32 meters</div>
+            <div class="bubble bot"><span class="sr-only">Assistant: </span>Noted: 32 m. Which town or state is the project in?</div>
+            <div class="bubble user"><span class="sr-only">Visitor: </span>Kebbi State</div>
+            <div class="bubble bot"><span class="sr-only">Assistant: </span>And your name, please? (You can say skip.)</div>
+            <div class="bubble user"><span class="sr-only">Visitor: </span>Ada</div>
+
+            <div class="bubble summary">
+              <span class="sr-only">Assistant: </span><strong>Request ready</strong>
+              Name: Ada<br>
+              Size/type: 10mm²<br>
+              Length: 32 m<br>
+              Location: Kebbi (nearest point: Abuja)
+            </div>
+            <div class="chat-action" aria-hidden="true">Continue on WhatsApp</div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>What changed</h2>
+        <p>Enquiries that reach the sales team now arrive with the core details already filled in. The team starts with context instead of a blank conversation.</p>
+        <ul class="prose-list">
+          <li>Product and dealer questions are handled on the website without immediate human involvement.</li>
+          <li>Quantity and location are collected before the hand-off.</li>
+          <li>The WhatsApp conversation opens with a clean summary, so follow-up is faster and more precise.</li>
+        </ul>
+        <p class="note">The same pattern works for other manufacturers that receive mixed product questions and commercial enquiries.</p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Have incomplete enquiries reaching your team?</h2>
+        <p>Tell us what is currently missing from the conversations that arrive. We will tell you whether a similar system is a good fit.</p>
+        <a href="contact.html" class="btn">Tell us about the problem</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Assista Tech Concept</div>
+      <div>
+        <a href="mailto:info@assistatechconcept.com.ng">info@assistatechconcept.com.ng</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
