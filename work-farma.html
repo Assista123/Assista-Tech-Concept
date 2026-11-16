@@ -1,0 +1,676 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f4ef" />
+
+  <title>Farma Assista case study — Assista Tech Concept</title>
+  <meta name="description" content="How Farma Assista helps poultry farmers manage daily farm records, flock health, vaccination reminders and financial summaries through WhatsApp and Telegram." />
+
+  <meta property="og:title" content="Farma Assista case study — Assista Tech Concept" />
+  <meta property="og:description" content="A conversational farm-management assistant that helps poultry farmers record activities, monitor flock health and review farm finances through familiar messaging apps." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://assistatechconcept.com.ng/work-farma.html" />
+  <meta property="og:site_name" content="Assista Tech Concept" />
+  <meta property="og:image" content="https://assistatechconcept.com.ng/og-image.jpg" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .page-intro {
+      padding: var(--space-xl) 0 var(--space-lg);
+    }
+
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .case-meta dt {
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .case-meta dd {
+      margin: 0;
+    }
+
+    .section {
+      padding: var(--space-xl) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section.alt {
+      background: var(--surface);
+    }
+
+    .section h2 {
+      margin-bottom: var(--space-md);
+    }
+
+    .section p {
+      color: var(--text-muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .prose-list {
+      margin: 1.25rem 0 0 1.25rem;
+      color: var(--text-muted);
+    }
+
+    .prose-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .note {
+      margin-top: 1.25rem;
+    }
+
+    .chat-figure {
+      margin: 0;
+    }
+
+    .chat-figure figcaption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .chat-mock {
+      background: var(--text);
+      border-radius: 12px;
+      padding: 1.25rem;
+      max-width: 420px;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding-bottom: 0.9rem;
+      margin-bottom: 0.9rem;
+      border-bottom: 1px solid #44403c;
+      color: #fafaf9;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .chat-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .bubble {
+      max-width: 85%;
+      padding: 0.65rem 0.85rem;
+      border-radius: 12px;
+      margin-bottom: 0.65rem;
+      color: #fafaf9;
+    }
+
+    .bubble.bot {
+      background: #292524;
+      border-bottom-left-radius: 4px;
+    }
+
+    .bubble.user {
+      background: var(--accent);
+      margin-left: auto;
+      border-bottom-right-radius: 4px;
+    }
+
+    .bubble.summary {
+      background: #292524;
+      border: 1px solid #44403c;
+      max-width: 100%;
+      font-size: 0.85rem;
+    }
+
+    .bubble.summary strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: #fafaf9;
+    }
+
+    .chat-action {
+      display: block;
+      width: 100%;
+      margin-top: 0.75rem;
+      padding: 0.7rem;
+      background: #3f6212;
+      color: #f7fee7;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-align: center;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .chat-menu {
+      display: grid;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .chat-menu div {
+      padding: 0.65rem 0.8rem;
+      border: 1px solid #57534e;
+      border-radius: 8px;
+      color: #fafaf9;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: var(--space-md);
+    }
+
+    .feature-list div {
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .feature-list strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+
+    .feature-list p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .cta-band {
+      margin-top: var(--space-lg);
+    }
+
+    @media (max-width: 800px) {
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .page-intro {
+        padding: var(--space-lg) 0;
+      }
+
+      .chat-mock {
+        max-width: 100%;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">Assista <span>Tech Concept</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="nav-toggle">Menu</button>
+
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="container">
+        <p class="section-label">Case study</p>
+        <h1>Farma Assista</h1>
+        <p class="lead">
+          A conversational farm-management assistant that helps poultry farmers
+          record daily activities, monitor flock health and understand farm
+          performance through WhatsApp and Telegram.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Client type</dt>
+            <dd>Poultry farming</dd>
+          </div>
+          <div>
+            <dt>Channel</dt>
+            <dd>WhatsApp and Telegram</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Farm records, flock management and health checks</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>The operational friction</h2>
+        <p>
+          Poultry farming involves many small but important daily activities:
+          recording feed consumption, tracking mortality, monitoring egg
+          collection, administering medication and keeping financial records.
+        </p>
+        <p>
+          When these records are scattered across notebooks, memory and
+          messaging conversations, it becomes harder to maintain a clear view
+          of what is happening on the farm.
+        </p>
+        <p>
+          Farma Assista brings these activities into a conversational
+          interface, allowing farmers to interact with their farm records
+          without having to learn a separate, complicated system.
+        </p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container two-col">
+        <div>
+          <h2>A familiar way to manage farm activities</h2>
+          <p>
+            Rather than asking farmers to navigate a complex dashboard,
+            Farma Assista uses familiar messaging channels to guide them
+            through common farm tasks.
+          </p>
+          <p>
+            After onboarding, farmers can access a menu of activities and
+            record information through guided conversations.
+          </p>
+          <ul class="prose-list">
+            <li>Feed consumption and daily farm activity</li>
+            <li>Mortality and flock records</li>
+            <li>Egg collection and bird weight</li>
+            <li>Medication and litter checks</li>
+            <li>Sales, expenses and financial summaries</li>
+            <li>Stock, vaccination and flock health checks</li>
+          </ul>
+        </div>
+
+        <figure class="chat-figure">
+          <figcaption>Illustration of the conversational onboarding and menu experience.</figcaption>
+          <div class="chat-mock">
+            <div class="chat-header">
+              <div class="chat-avatar" aria-hidden="true">F</div>
+              Farma Assista
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              Welcome to Farma Assista. Let's get your farm set up.
+            </div>
+
+            <div class="bubble user">
+              <span class="sr-only">Farmer: </span>
+              Start
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              What type of birds do you raise?
+            </div>
+
+            <div class="chat-action" aria-hidden="true">BROILER</div>
+            <div class="chat-action" aria-hidden="true">LAYER</div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              Your farm is ready. What would you like to do today?
+            </div>
+
+            <div class="chat-menu">
+              <div>Daily Logs</div>
+              <div>Sales &amp; Finance</div>
+              <div>Farm Management</div>
+              <div>Health Checks</div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Recording daily activity and mortality</h2>
+          <p>
+            Farmers can record routine activities and report flock losses
+            through guided prompts. The system captures details such as the
+            date, flock, number of birds lost and suspected cause.
+          </p>
+          <p>
+            The resulting record helps the farmer keep track of losses and
+            the estimated financial impact, while confirming the updated
+            flock count.
+          </p>
+        </div>
+
+        <figure class="chat-figure">
+          <figcaption>Example of a guided mortality-recording conversation.</figcaption>
+          <div class="chat-mock">
+            <div class="chat-header">
+              <div class="chat-avatar" aria-hidden="true">F</div>
+              Farma Assista
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              What date did the mortality occur?
+            </div>
+
+            <div class="bubble user">
+              <span class="sr-only">Farmer: </span>
+              Today
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              Which flock?
+            </div>
+
+            <div class="bubble user">
+              <span class="sr-only">Farmer: </span>
+              October Batch
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              How many birds were lost?
+            </div>
+
+            <div class="bubble user">
+              <span class="sr-only">Farmer: </span>
+              2
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              What was the suspected cause?
+            </div>
+
+            <div class="bubble user">
+              <span class="sr-only">Farmer: </span>
+              Cold / Heat Stress
+            </div>
+
+            <div class="bubble summary">
+              <span class="sr-only">Assistant: </span>
+              <strong>Mortality record</strong>
+              Flock: October Batch<br>
+              Birds lost: 2<br>
+              Suspected cause: Cold / Heat Stress<br>
+              Estimated loss: ₦20,000<br>
+              Remaining birds: 278
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              Please confirm that 278 birds remain in this flock.
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container two-col">
+        <div>
+          <h2>Vaccination reminders and flock management</h2>
+          <p>
+            Farma Assista also supports routine flock-management activities,
+            including stock records, health checks and vaccination reminders.
+          </p>
+          <p>
+            Reminders help farmers keep important activities visible and
+            maintain a record of their flock-management routine.
+          </p>
+        </div>
+
+        <figure class="chat-figure">
+          <figcaption>Example vaccination reminder.</figcaption>
+          <div class="chat-mock">
+            <div class="chat-header">
+              <div class="chat-avatar" aria-hidden="true">F</div>
+              Farma Assista
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              Good morning! Here is a vaccination reminder for your flock.
+            </div>
+
+            <div class="bubble summary">
+              <span class="sr-only">Assistant: </span>
+              <strong>Vaccination reminder</strong>
+              Flock: Layer Batch 2<br>
+              Vaccine: Fowl Typhoid Vaccine
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              Please consult a veterinarian for guidance on the appropriate
+              vaccine product and dosage for your birds.
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Symptom-based health checks</h2>
+          <p>
+            Farmers can describe visible symptoms and use the health-check
+            flow to explore possible conditions associated with those signs.
+          </p>
+          <p>
+            The assistant presents possible matches as guidance for further
+            investigation, not as a confirmed veterinary diagnosis.
+          </p>
+          <p>
+            Because different conditions can require different treatments,
+            farmers are advised to consult a veterinarian before treating
+            their birds. Severe cases warrant prompt veterinary attention.
+          </p>
+        </div>
+
+        <figure class="chat-figure">
+          <figcaption>Example of a symptom-based health-check result.</figcaption>
+          <div class="chat-mock">
+            <div class="chat-header">
+              <div class="chat-avatar" aria-hidden="true">F</div>
+              Farma Assista
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              Select the symptoms you have observed in your birds.
+            </div>
+
+            <div class="chat-menu">
+              <div>Rough / puffed feathers</div>
+              <div>Sluggish birds</div>
+              <div>White / chalky droppings</div>
+              <div>Watery / runny droppings</div>
+            </div>
+
+            <div class="bubble summary">
+              <span class="sr-only">Assistant: </span>
+              <strong>Possible conditions</strong>
+              Gumboro Disease (IBD): 82% match<br>
+              Colibacillosis (E. coli): 73% match
+            </div>
+
+            <div class="bubble bot">
+              <span class="sr-only">Assistant: </span>
+              These are possible matches, not a confirmed diagnosis.
+              The conditions may require different treatments. Consult
+              a veterinarian to confirm the cause before treating your birds.
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container two-col">
+        <div>
+          <h2>Understanding farm performance</h2>
+          <p>
+            Farm records become more useful when farmers can review them
+            together. Farma Assista brings revenue and expense information
+            into a financial summary, helping farmers see how their farm
+            operations are performing over a selected period.
+          </p>
+          <p>
+            The summary brings together sales revenue and recorded costs
+            such as feed, medication and other expenses.
+          </p>
+        </div>
+
+        <figure class="chat-figure">
+          <figcaption>Example financial summary for October Batch.</figcaption>
+          <div class="chat-mock">
+            <div class="chat-header">
+              <div class="chat-avatar" aria-hidden="true">F</div>
+              Farma Assista
+            </div>
+
+            <div class="bubble summary">
+              <span class="sr-only">Assistant: </span>
+              <strong>Profit Summary — October Batch</strong>
+              Age: 25 days<br>
+              Starting birds: 280<br>
+              Deaths: 2 (0.7%)<br><br>
+
+              <strong>Revenue</strong>
+              Bird sales: ₦216,000<br>
+              Egg sales: ₦0<br>
+              Total revenue: ₦216,000<br><br>
+
+              <strong>Expenses</strong>
+              Feed: ₦290,000<br>
+              Drugs: ₦0<br>
+              Other: ₦10,200<br>
+              Total expenses: ₦300,200<br><br>
+
+              <strong>Overall result</strong>
+              Loss: ₦84,200
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>What Farma Assista brings together</h2>
+        <p>
+          The product connects everyday poultry-farming activities in one
+          conversational experience.
+        </p>
+
+        <div class="feature-list">
+          <div>
+            <strong>Daily farm records</strong>
+            <p>Feed, mortality, egg collection, weight, medication and litter checks.</p>
+          </div>
+
+          <div>
+            <strong>Flock management</strong>
+            <p>Flock records, stock information and vaccination reminders.</p>
+          </div>
+
+          <div>
+            <strong>Health checks</strong>
+            <p>Symptom-based guidance with clear recommendations to seek veterinary confirmation.</p>
+          </div>
+
+          <div>
+            <strong>Sales and finance</strong>
+            <p>Revenue, expenses and financial summaries for farm activities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Building tools around real operational needs?</h2>
+        <p>
+          Tell us about the records, workflows or decisions your business
+          needs to manage. We can help shape a practical digital solution.
+        </p>
+        <a href="contact.html" class="btn">Tell us about the problem</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Assista Tech Concept</div>
+      <div>
+        <a href="mailto:info@assistatechconcept.com.ng">info@assistatechconcept.com.ng</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
