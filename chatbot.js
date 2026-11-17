@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const launcher = document.getElementById('assista-launcher');
   const chat = document.getElementById('assista-chat');
-  if (!chat) return; 
-  chat.hidden = false;
+  const closeBtn = document.getElementById('assista-close');
+  
+  // Guard against missing elements
+  if (!chat || !launcher) return; 
 
   const chatBody = document.getElementById('assista-chat-body');
   const inputArea = document.getElementById('assista-input-area');
@@ -11,6 +14,50 @@ document.addEventListener('DOMContentLoaded', () => {
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mjywywqw';
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+  let userHasInteracted = false;
+  let editing = false;
+  let chatInitialized = false; // Prevents restarting the flow when reopening
+
+  // --- TOGGLE LOGIC ---
+  function openChat() {
+    chat.classList.add('is-open');
+    launcher.setAttribute('aria-expanded', 'true');
+    
+    if (!chatInitialized) {
+      renderStep('start');
+      chatInitialized = true;
+    } else {
+      // Focus the input if returning to the chat
+      if (!inputArea.classList.contains('is-hidden')) {
+        textInput.focus({ preventScroll: true });
+      }
+    }
+  }
+
+  function closeChat() {
+    chat.classList.remove('is-open');
+    launcher.setAttribute('aria-expanded', 'false');
+    launcher.focus({ preventScroll: true }); // Return focus to launcher
+  }
+
+  launcher.addEventListener('click', () => {
+    if (chat.classList.contains('is-open')) {
+      closeChat();
+    } else {
+      openChat();
+    }
+  });
+
+  closeBtn.addEventListener('click', closeChat);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && chat.classList.contains('is-open')) {
+      closeChat();
+    }
+  });
+
+  // --- FLOW LOGIC (Unchanged from previous version) ---
   const flow = {
     start: {
       prompt: "Hi, I'm the Assista assistant. Tell me what's slow, manual or incomplete in your work and I'll pass it to the team.\n\nWhat kind of friction is it?",
@@ -73,9 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
       contact: ''
     }
   };
-
-  let userHasInteracted = false;
-  let editing = false;
 
   function scrollToBottom() {
     chatBody.scrollTop = chatBody.scrollHeight;
@@ -268,8 +312,4 @@ document.addEventListener('DOMContentLoaded', () => {
   function showSuccess() {
     addMessage("Thank you! Your enquiry has been sent. We'll reply within one to two working days.", 'bot');
   }
-
-  setTimeout(() => {
-    renderStep('start');
-  }, 500);
 });
