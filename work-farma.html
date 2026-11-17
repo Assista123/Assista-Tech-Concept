@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="styles.css" />
 
   <style>
@@ -83,113 +83,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .note {
-      margin-top: 1.25rem;
-    }
-
-    .chat-figure {
-      margin: 0;
-    }
-
-    .chat-figure figcaption {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .chat-mock {
-      background: var(--text);
-      border-radius: 12px;
-      padding: 1.25rem;
-      max-width: 420px;
-      font-size: 0.9rem;
-      line-height: 1.45;
-    }
-
-    .chat-header {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      padding-bottom: 0.9rem;
-      margin-bottom: 0.9rem;
-      border-bottom: 1px solid #44403c;
-      color: #fafaf9;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .chat-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: white;
-    }
-
-    .bubble {
-      max-width: 85%;
-      padding: 0.65rem 0.85rem;
-      border-radius: 12px;
-      margin-bottom: 0.65rem;
-      color: #fafaf9;
-    }
-
-    .bubble.bot {
-      background: #292524;
-      border-bottom-left-radius: 4px;
-    }
-
-    .bubble.user {
-      background: var(--accent);
-      margin-left: auto;
-      border-bottom-right-radius: 4px;
-    }
-
-    .bubble.summary {
-      background: #292524;
-      border: 1px solid #44403c;
-      max-width: 100%;
-      font-size: 0.85rem;
-    }
-
-    .bubble.summary strong {
-      display: block;
-      margin-bottom: 0.35rem;
-      color: #fafaf9;
-    }
-
-    .chat-action {
-      display: block;
-      width: 100%;
-      margin-top: 0.75rem;
-      padding: 0.7rem;
-      background: #3f6212;
-      color: #f7fee7;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-align: center;
-      border-radius: 8px;
-      border: none;
-    }
-
-    .chat-menu {
-      display: grid;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-    }
-
-    .chat-menu div {
-      padding: 0.65rem 0.8rem;
-      border: 1px solid #57534e;
-      border-radius: 8px;
-      color: #fafaf9;
-    }
-
     .feature-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -203,15 +96,290 @@
       border-radius: 10px;
     }
 
-    .feature-list strong {
-      display: block;
-      margin-bottom: 0.35rem;
+    .feature-card-title {
+      font-size: 1rem;
+      margin: 0 0 0.35rem 0;
       color: var(--text);
+      font-weight: 600;
     }
 
     .feature-list p {
       margin: 0;
       font-size: 0.95rem;
+    }
+
+    .cta-band {
+      margin-top: var(--space-lg);
+    }
+
+    /* --- WHATSAPP UI STYLES --- */
+    .chat-figure {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .chat-figure figcaption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .chat-mock {
+      background-color: #0b141a;
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 420px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: #202c33;
+      color: #e9edef;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #2a3942;
+    }
+
+    .chat-header .back-icon {
+      color: #aebac1;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .chat-header .header-icons {
+      margin-left: auto;
+      color: #aebac1;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .chat-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #00a884;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .header-title {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .header-bot-label {
+      font-size: 0.75rem;
+      color: #8696a0;
+      font-weight: 400;
+    }
+
+    .chat-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      min-height: 400px;
+      min-width: 0;
+    }
+
+    .bubble {
+      max-width: 85%;
+      padding: 0.5rem 0.6rem 0.4rem 0.6rem;
+      border-radius: 8px;
+      color: #e9edef;
+      position: relative;
+      box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+      min-width: 0;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .bubble.bot {
+      background: #202c33;
+      align-self: flex-start;
+      border-top-left-radius: 0;
+    }
+
+    .bubble.bot::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -8px;
+      width: 0;
+      height: 0;
+      border-top: 0px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 8px solid #202c33;
+    }
+
+    .bubble.user {
+      background: #005c4b;
+      align-self: flex-end;
+      border-top-right-radius: 0;
+    }
+
+    .bubble.user::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -8px;
+      width: 0;
+      height: 0;
+      border-top: 0px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 8px solid #005c4b;
+    }
+
+    .bubble.summary {
+      background: #202c33;
+      border: 1px solid #2a3942;
+      max-width: 95%;
+      font-size: 0.85rem;
+      align-self: flex-start;
+      border-top-left-radius: 0;
+    }
+
+    .bubble.summary.full-width {
+      max-width: 100%;
+    }
+
+    .bubble.summary strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: #00a884;
+      font-size: 0.9rem;
+    }
+
+    /* Specificity fix for headings and loss line inside summary */
+    .bubble.summary strong.summary-heading {
+      color: #e9edef;
+      font-weight: 600;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+
+    .bubble.summary strong.summary-loss {
+      color: #f15c6d;
+      font-weight: 700;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .summary-subtext {
+      color: #8696a0;
+      font-size: 0.8rem;
+    }
+
+    .severe-alert {
+      color: #f15c6d;
+      font-weight: bold;
+      display: block;
+      margin-top: 8px;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.65rem;
+      color: #8696a0;
+      margin-top: 4px;
+      line-height: 1;
+    }
+
+    .meta .checks {
+      color: #53bdeb;
+    }
+
+    .wa-btn {
+      display: block;
+      width: 100%;
+      padding: 0.6rem;
+      background: #202c33;
+      color: #00a884;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid #2a3942;
+      margin-top: 0.25rem;
+    }
+
+    .btn-danger {
+      color: #f15c6d;
+    }
+
+    .btn-neutral {
+      color: #e9edef;
+    }
+
+    .wa-list-menu {
+      background: #202c33;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+      align-self: flex-start;
+      width: 100%;
+      max-width: 95%;
+      min-width: 0;
+    }
+
+    .wa-list-header {
+      padding: 0.75rem 1rem;
+      color: #8696a0;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-bottom: 1px solid #2a3942;
+    }
+
+    .wa-list-item {
+      padding: 0.75rem 1rem;
+      color: #e9edef;
+      border-bottom: 1px solid #2a3942;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow-wrap: break-word;
+    }
+
+    .wa-list-item:last-child {
+      border-bottom: none;
+    }
+
+    .wa-list-item .chevron {
+      color: #8696a0;
+      font-size: 1.2rem;
+      line-height: 1;
+      margin-left: 8px;
+    }
+
+    .system-msg {
+      align-self: center;
+      background: #182229;
+      color: #8696a0;
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 12px;
+      margin: 0.5rem 0;
     }
 
     .sr-only {
@@ -224,10 +392,6 @@
       clip: rect(0, 0, 0, 0);
       white-space: nowrap;
       border: 0;
-    }
-
-    .cta-band {
-      margin-top: var(--space-lg);
     }
 
     @media (max-width: 800px) {
@@ -343,41 +507,61 @@
         </div>
 
         <figure class="chat-figure">
-          <figcaption>Illustration of the conversational onboarding and menu experience.</figcaption>
+          <figcaption>Illustrative WhatsApp view: conversational onboarding and menu.</figcaption>
           <div class="chat-mock">
             <div class="chat-header">
+              <span class="back-icon" aria-hidden="true">←</span>
               <div class="chat-avatar" aria-hidden="true">F</div>
-              Farma Assista
+              <div class="header-title">
+                Farma Assista
+                <span class="header-bot-label">bot</span>
+              </div>
+              <span class="header-icons" aria-hidden="true">⋮</span>
             </div>
+            
+            <div class="chat-body">
+              <div class="system-msg">Today</div>
+              
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                Welcome to Farma Assista. Let's get your farm set up.
+                <div class="meta" aria-hidden="true">09:41 AM</div>
+              </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              Welcome to Farma Assista. Let's get your farm set up.
-            </div>
+              <div class="bubble user">
+                <span class="sr-only">Farmer: </span>
+                Start
+                <div class="meta" aria-hidden="true">09:41 AM <span class="checks">✓✓</span></div>
+              </div>
 
-            <div class="bubble user">
-              <span class="sr-only">Farmer: </span>
-              Start
-            </div>
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                What type of birds do you raise?
+                <div class="meta" aria-hidden="true">09:42 AM</div>
+              </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              What type of birds do you raise?
-            </div>
+              <div class="wa-btn" aria-hidden="true">BROILER (Meat)</div>
+              <div class="wa-btn" aria-hidden="true">LAYER (Egg)</div>
 
-            <div class="chat-action" aria-hidden="true">BROILER</div>
-            <div class="chat-action" aria-hidden="true">LAYER</div>
+              <div class="bubble user">
+                <span class="sr-only">Farmer: </span>
+                BROILER (Meat)
+                <div class="meta" aria-hidden="true">09:42 AM <span class="checks">✓✓</span></div>
+              </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              Your farm is ready. What would you like to do today?
-            </div>
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                Your farm is ready. What would you like to do today?
+                <div class="meta" aria-hidden="true">09:43 AM</div>
+              </div>
 
-            <div class="chat-menu">
-              <div>Daily Logs</div>
-              <div>Sales &amp; Finance</div>
-              <div>Farm Management</div>
-              <div>Health Checks</div>
+              <div class="wa-list-menu">
+                <div class="wa-list-header">Main Menu</div>
+                <div class="wa-list-item">📋 Daily Logs <span class="chevron" aria-hidden="true">›</span></div>
+                <div class="wa-list-item">💵 Sales &amp; Finance <span class="chevron" aria-hidden="true">›</span></div>
+                <div class="wa-list-item">📦 Farm Management <span class="chevron" aria-hidden="true">›</span></div>
+                <div class="wa-list-item">❤️ Health Checks <span class="chevron" aria-hidden="true">›</span></div>
+              </div>
             </div>
           </div>
         </figure>
@@ -401,66 +585,83 @@
         </div>
 
         <figure class="chat-figure">
-          <figcaption>Example of a guided mortality-recording conversation.</figcaption>
+          <figcaption>Illustrative WhatsApp view: guided mortality-recording conversation.</figcaption>
           <div class="chat-mock">
             <div class="chat-header">
+              <span class="back-icon" aria-hidden="true">←</span>
               <div class="chat-avatar" aria-hidden="true">F</div>
-              Farma Assista
+              <div class="header-title">
+                Farma Assista
+                <span class="header-bot-label">bot</span>
+              </div>
+              <span class="header-icons" aria-hidden="true">⋮</span>
             </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              What date did the mortality occur?
-            </div>
+            <div class="chat-body">
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                What date did the mortality occur?
+                <div class="meta" aria-hidden="true">10:12 AM</div>
+              </div>
 
-            <div class="bubble user">
-              <span class="sr-only">Farmer: </span>
-              Today
-            </div>
+              <div class="bubble user">
+                <span class="sr-only">Farmer: </span>
+                Today
+                <div class="meta" aria-hidden="true">10:12 AM <span class="checks">✓✓</span></div>
+              </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              Which flock?
-            </div>
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                Which flock?
+                <div class="meta" aria-hidden="true">10:13 AM</div>
+              </div>
 
-            <div class="bubble user">
-              <span class="sr-only">Farmer: </span>
-              October Batch
-            </div>
+              <div class="bubble user">
+                <span class="sr-only">Farmer: </span>
+                October Batch
+                <div class="meta" aria-hidden="true">10:13 AM <span class="checks">✓✓</span></div>
+              </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              How many birds were lost?
-            </div>
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                How many birds were lost?
+                <div class="meta" aria-hidden="true">10:13 AM</div>
+              </div>
 
-            <div class="bubble user">
-              <span class="sr-only">Farmer: </span>
-              2
-            </div>
+              <div class="bubble user">
+                <span class="sr-only">Farmer: </span>
+                2
+                <div class="meta" aria-hidden="true">10:14 AM <span class="checks">✓✓</span></div>
+              </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              What was the suspected cause?
-            </div>
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                What was the suspected cause?
+                <div class="meta" aria-hidden="true">10:14 AM</div>
+              </div>
 
-            <div class="bubble user">
-              <span class="sr-only">Farmer: </span>
-              Cold / Heat Stress
-            </div>
+              <div class="bubble user">
+                <span class="sr-only">Farmer: </span>
+                Cold / Heat Stress
+                <div class="meta" aria-hidden="true">10:14 AM <span class="checks">✓✓</span></div>
+              </div>
 
-            <div class="bubble summary">
-              <span class="sr-only">Assistant: </span>
-              <strong>Mortality record</strong>
-              Flock: October Batch<br>
-              Birds lost: 2<br>
-              Suspected cause: Cold / Heat Stress<br>
-              Estimated loss: ₦20,000<br>
-              Remaining birds: 278
-            </div>
+              <div class="bubble summary">
+                <span class="sr-only">Assistant: </span>
+                <strong>✅ Mortality Recorded</strong>
+                Flock: October Batch<br>
+                Birds lost: 2<br>
+                Suspected cause: Cold / Heat Stress<br>
+                Estimated loss: ₦20,000<br>
+                Remaining birds: 278
+                <div class="meta" aria-hidden="true">10:15 AM</div>
+              </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              Please confirm that 278 birds remain in this flock.
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                Please confirm that 278 birds remain in this flock.
+                <div class="meta" aria-hidden="true">10:15 AM</div>
+              </div>
             </div>
           </div>
         </figure>
@@ -482,29 +683,42 @@
         </div>
 
         <figure class="chat-figure">
-          <figcaption>Example vaccination reminder.</figcaption>
+          <figcaption>Illustrative WhatsApp view: automated vaccination reminder.</figcaption>
           <div class="chat-mock">
             <div class="chat-header">
+              <span class="back-icon" aria-hidden="true">←</span>
               <div class="chat-avatar" aria-hidden="true">F</div>
-              Farma Assista
+              <div class="header-title">
+                Farma Assista
+                <span class="header-bot-label">bot</span>
+              </div>
+              <span class="header-icons" aria-hidden="true">⋮</span>
             </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              Good morning! Here is a vaccination reminder for your flock.
-            </div>
+            <div class="chat-body">
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                Good morning! Here is a vaccination reminder for your flock.
+                <div class="meta" aria-hidden="true">08:00 AM</div>
+              </div>
 
-            <div class="bubble summary">
-              <span class="sr-only">Assistant: </span>
-              <strong>Vaccination reminder</strong>
-              Flock: Layer Batch 2<br>
-              Vaccine: Fowl Typhoid Vaccine
-            </div>
+              <div class="bubble summary">
+                <span class="sr-only">Assistant: </span>
+                <strong>💉 Vaccination Reminder</strong>
+                Flock: Layer Batch 2<br>
+                Vaccine: Fowl Typhoid Vaccine
+                <div class="meta" aria-hidden="true">08:00 AM</div>
+              </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              Please consult a veterinarian for guidance on the appropriate
-              vaccine product and dosage for your birds.
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                Please consult a veterinarian for guidance on the appropriate
+                vaccine product and dosage for your birds.
+                <div class="meta" aria-hidden="true">08:01 AM</div>
+              </div>
+
+              <span class="sr-only">Option: Mark done.</span>
+              <div class="wa-btn" aria-hidden="true">✅ Mark Done</div>
             </div>
           </div>
         </figure>
@@ -531,37 +745,70 @@
         </div>
 
         <figure class="chat-figure">
-          <figcaption>Example of a symptom-based health-check result.</figcaption>
+          <figcaption>Illustrative WhatsApp view: symptom logging and vet escalation.</figcaption>
           <div class="chat-mock">
             <div class="chat-header">
+              <span class="back-icon" aria-hidden="true">←</span>
               <div class="chat-avatar" aria-hidden="true">F</div>
-              Farma Assista
+              <div class="header-title">
+                Farma Assista
+                <span class="header-bot-label">bot</span>
+              </div>
+              <span class="header-icons" aria-hidden="true">⋮</span>
             </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              Select the symptoms you have observed in your birds.
-            </div>
+            <div class="chat-body">
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                Select the symptoms you have observed in your birds.
+                <div class="meta" aria-hidden="true">10:07 AM</div>
+              </div>
 
-            <div class="chat-menu">
-              <div>Rough / puffed feathers</div>
-              <div>Sluggish birds</div>
-              <div>White / chalky droppings</div>
-              <div>Watery / runny droppings</div>
-            </div>
+              <div class="bubble user">
+                <span class="sr-only">Farmer: </span>
+                Feathers rough and puffed up<br>Birds sluggish and not moving
+                <div class="meta" aria-hidden="true">10:07 AM <span class="checks">✓✓</span></div>
+              </div>
 
-            <div class="bubble summary">
-              <span class="sr-only">Assistant: </span>
-              <strong>Possible conditions</strong>
-              Gumboro Disease (IBD): 82% match<br>
-              Colibacillosis (E. coli): 73% match
-            </div>
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                What colour are the droppings?
+                <div class="meta" aria-hidden="true">10:07 AM</div>
+              </div>
 
-            <div class="bubble bot">
-              <span class="sr-only">Assistant: </span>
-              These are possible matches, not a confirmed diagnosis.
-              The conditions may require different treatments. Consult
-              a veterinarian to confirm the cause before treating your birds.
+              <div class="bubble user">
+                <span class="sr-only">Farmer: </span>
+                White or chalky
+                <div class="meta" aria-hidden="true">10:07 AM <span class="checks">✓✓</span></div>
+              </div>
+
+              <div class="bubble bot">
+                <span class="sr-only">Assistant: </span>
+                What is the texture of the droppings?
+                <div class="meta" aria-hidden="true">10:07 AM</div>
+              </div>
+
+              <div class="bubble user">
+                <span class="sr-only">Farmer: </span>
+                Very watery and runny
+                <div class="meta" aria-hidden="true">10:08 AM <span class="checks">✓✓</span></div>
+              </div>
+
+              <div class="bubble summary">
+                <span class="sr-only">Assistant: </span>
+                <strong>🩺 Health Diagnosis</strong>
+                Two possible conditions detected:<br><br>
+                1. Gumboro Disease (IBD) - 82% match<br>
+                2. Colibacillosis (E. coli) - 73% match<br><br>
+                <span class="summary-subtext">Consult a vet to confirm before treating.</span>
+                <span class="severe-alert">🔴 Severe condition. Prompt veterinary attention recommended.</span>
+                <div class="meta" aria-hidden="true">10:08 AM</div>
+              </div>
+
+              <span class="sr-only">Options: connect to a vet, manage for now, main menu.</span>
+              <div class="wa-btn" aria-hidden="true">✅ Yes, connect me to a vet</div>
+              <div class="wa-btn btn-danger" aria-hidden="true">❌ I will manage for now</div>
+              <div class="wa-btn btn-neutral" aria-hidden="true">🏠 Main Menu</div>
             </div>
           </div>
         </figure>
@@ -585,33 +832,40 @@
         </div>
 
         <figure class="chat-figure">
-          <figcaption>Example financial summary for October Batch.</figcaption>
+          <figcaption>Illustrative WhatsApp view: automated financial summary.</figcaption>
           <div class="chat-mock">
             <div class="chat-header">
+              <span class="back-icon" aria-hidden="true">←</span>
               <div class="chat-avatar" aria-hidden="true">F</div>
-              Farma Assista
+              <div class="header-title">
+                Farma Assista
+                <span class="header-bot-label">bot</span>
+              </div>
+              <span class="header-icons" aria-hidden="true">⋮</span>
             </div>
 
-            <div class="bubble summary">
-              <span class="sr-only">Assistant: </span>
-              <strong>Profit Summary — October Batch</strong>
-              Age: 25 days<br>
-              Starting birds: 280<br>
-              Deaths: 2 (0.7%)<br><br>
+            <div class="chat-body">
+              <div class="bubble summary full-width">
+                <span class="sr-only">Assistant: </span>
+                <strong>📊 Profit Summary — September Batch</strong>
+                
+                <span class="summary-subtext">Age: 25 days | Started: 280 | Deaths: 2 (0.7%)</span>
+                
+                <strong class="summary-heading">Revenue</strong>
+                Bird sales: ₦216,000<br>
+                Egg sales: ₦0<br>
+                Total revenue: ₦216,000
 
-              <strong>Revenue</strong>
-              Bird sales: ₦216,000<br>
-              Egg sales: ₦0<br>
-              Total revenue: ₦216,000<br><br>
+                <strong class="summary-heading">Expenses</strong>
+                Feed: ₦290,000<br>
+                Drugs: ₦0<br>
+                Other: ₦10,200<br>
+                Total expenses: ₦300,200
 
-              <strong>Expenses</strong>
-              Feed: ₦290,000<br>
-              Drugs: ₦0<br>
-              Other: ₦10,200<br>
-              Total expenses: ₦300,200<br><br>
+                <strong class="summary-loss">❌ Loss: ₦84,200</strong>
 
-              <strong>Overall result</strong>
-              Loss: ₦84,200
+                <div class="meta" aria-hidden="true">10:12 AM</div>
+              </div>
             </div>
           </div>
         </figure>
@@ -628,22 +882,22 @@
 
         <div class="feature-list">
           <div>
-            <strong>Daily farm records</strong>
+            <h3 class="feature-card-title">Daily farm records</h3>
             <p>Feed, mortality, egg collection, weight, medication and litter checks.</p>
           </div>
 
           <div>
-            <strong>Flock management</strong>
+            <h3 class="feature-card-title">Flock management</h3>
             <p>Flock records, stock information and vaccination reminders.</p>
           </div>
 
           <div>
-            <strong>Health checks</strong>
+            <h3 class="feature-card-title">Health checks</h3>
             <p>Symptom-based guidance with clear recommendations to seek veterinary confirmation.</p>
           </div>
 
           <div>
-            <strong>Sales and finance</strong>
+            <h3 class="feature-card-title">Sales and finance</h3>
             <p>Revenue, expenses and financial summaries for farm activities.</p>
           </div>
         </div>
