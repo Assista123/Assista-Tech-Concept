@@ -233,3 +233,196 @@ button:focus-visible {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* --- ASSISTA CHATBOT STYLES --- */
+.assista-chat-wrapper {
+  margin-top: var(--space-lg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1c1917;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.assista-chat-wrapper[hidden] {
+  display: none;
+}
+
+.assista-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #292524;
+  border-bottom: 1px solid #44403c;
+  color: #fafaf9;
+}
+
+.assista-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.assista-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.assista-header-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.assista-header-subtitle {
+  font-size: 0.75rem;
+  color: #a8a29e;
+}
+
+.assista-chat-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 350px;
+  max-height: 500px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.assista-bubble {
+  max-width: 85%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  animation: assista-fade-in 0.3s ease-out;
+}
+
+.assista-bubble.is-text {
+  white-space: pre-line;
+}
+
+.assista-bubble.bot {
+  background: #292524;
+  color: #e7e5e4;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.assista-bubble.user {
+  background: var(--accent);
+  color: #fafaf9;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.assista-bubble.system {
+  background: transparent;
+  color: #a8a29e;
+  font-size: 0.85rem;
+  text-align: center;
+  align-self: center;
+  max-width: 100%;
+  padding: 0.5rem;
+}
+
+.assista-note {
+  font-size: 0.8em;
+  color: #a8a29e;
+}
+
+.assista-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  animation: assista-fade-in 0.4s ease-out;
+}
+
+.assista-option-btn {
+  background: transparent;
+  border: 1px solid #57534e;
+  color: #e7e5e4;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  text-align: left;
+  font-family: inherit;
+}
+
+.assista-option-btn:hover {
+  background: #44403c;
+  border-color: #a8a29e;
+}
+
+.assista-input-area {
+  padding: 1rem;
+  background: #292524;
+  border-top: 1px solid #44403c;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.assista-input-area.is-hidden {
+  display: none;
+}
+
+.assista-input-area input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #57534e;
+  background: #1c1917;
+  color: #fafaf9;
+  font-family: inherit;
+  font-size: 1rem; /* Fixes iOS auto-zoom */
+}
+
+.assista-send-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.assista-send-btn:hover {
+  background: var(--accent-hover);
+}
+
+.assista-option-btn:focus-visible,
+.assista-send-btn:focus-visible,
+.assista-input-area input:focus-visible {
+  outline: 2px solid #fafaf9;
+  outline-offset: 2px;
+}
+
+@keyframes assista-fade-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assista-bubble, .assista-options { animation: none; }
+  .assista-chat-body { scroll-behavior: auto; }
+}
